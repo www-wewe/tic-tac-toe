@@ -1,18 +1,8 @@
-Homework assignment no. 1, Tic-Tac-Toe
+Homework solution, Tic-Tac-Toe
 ====================================
-
-**Publication date:**  March 15, 2022
-
-**Submission deadline:** April 1, 2022
-
-## CHANGELOG
-
-* 15.3.2022: Fixed JDK 11 compatibility issue with ``String#formatted``
-* 16.3.2022: Fixed Test on Windows caused by unnecessary stdout normalization  
-
 General information
 -------------------
-The goal of this homework is to implement the game of [tic-tac-toe](https://en.wikipedia.org/wiki/Tic-tac-toe)  
+This project is implementation of the game of [tic-tac-toe](https://en.wikipedia.org/wiki/Tic-tac-toe)  
 The players will alternate turns, each playing one action command. 
 See the "Running the application" section of this README to understand the desired behavior and the user interface. 
 
@@ -23,7 +13,7 @@ Then game ends when either of the following happens:
 - The Quit command is executed
 
 ### Command Line Option
-Application should support the following
+Application support the following
 
 | Name         | Short | Long      | Default | Description                                       | Conditions        |
 |--------------|-------|-----------|---------|---------------------------------------------------|-------------------|
@@ -57,26 +47,6 @@ Turn: 2
 | | | |
 -------
 Enter your turn (o):
-```
-
-Please pay special attention to the game board formatting. 
-
-- Each row of the board is bordered by a line of ``-`` characters from the top and the bottom
-- Cells are bordered by single ``|`` from the left and the right
-- Adjacent rows and cells share a separator 
-- Each cell is exactly 3 characters wide (including the borders). 
-  - The content of a cell is either a played symbol, or a single space for an empty cell.
-
-More complex examples of the gameplay can be seen in further section of this README. 
-
-For convenience and consistency across student solutions a set of messages is provided as a part of ``cmd.Messages`` class.
-These messages can be templated and printed to stdout via ``System.printf()`` method call.  
-The exact sequence of the output printed to stdout in each turn should thus be as follows
-```
-Message.TURN_COUNTER
-// Formatted board output
-Message.TURN_PROMPT
-Message.TURN_DELIMITER
 ```
 
 After the last turn (at the game end) the following should be appended 
@@ -135,55 +105,28 @@ The following conditions apply fort this command
   - See the example at the end of this README 
 - After the command is executed successfully the program exits
 
-### Evaluation
-Beside functional correctness this assignment is focused on the object-oriented design.
-This means that the way you structure your program will be an important part of its evaluation.
-On the other hand, the given set of tests is not trying to provide an elaborate test coverage and incorrect behaviour in corner-cases should not have a large impact on the evaluation.
-
-Note that all this is at your seminar teacher's discretion.
-
-The maximum number of points for this assignment is **10**.
-
-- **5 points** for passing the tests (attached tests do not guarantee a 100% correctness).
-- **5 points** for correct and clean implementation (evaluated by your class teacher).
-
-### Preconditions
-To successfully implement this assignment you need to know the following
-
-1. What is the difference between _class_ and _object_ and how to work with both.
-2. How programs are structured in _object-oriented_ languages.
-3. How to use basic control structures such as `if`, `for`/`while` and `switch`.
-4. How to work with `String`s and `enum`s in Java.
-5. How to work with _arrays_ (or _lists_).
-6. Being able to understand and navigate a code provided by third-party.
 
 ### Project structure
-The structure of the project provided as a base for your implementation should meet the following criteria.
+The structure of the meet the following criteria.
 
 1. Package ```cz.muni.fi.pb162.hw01``` contains classes and interfaces provided as a part of the assignment.
-  - **Do not modify or add any classes or subpackages into this package.**
-2. Package  ```cz.muni.fi.pb162.hw01.impl``` should contain your implementation.
-  - **Anything outside this package will be ignored during evaluation.**
-
-### Names in this document
-Unless fully classified name is provided, all class names are relative to the package ```cz.muni.fi.pb162.hw01``` or ```cz.muni.fi.pb162.hw01.impl``` for classes implemented as a part of your solution.
+2. Package  ```cz.muni.fi.pb162.hw01.impl``` contain implementation.
 
 
 ### Compiling the project
-The project can be compiled and packaged in the same way you already know
+The project can be compiled and packaged in this way:
 
 ```bash
 $ mvn clean install
 ```
 
-The only difference is that unlike with seminar project, this time the checks for missing documentation and style violation will produce an error.
+The checks for missing documentation and style violation will produce an error.
 You can temporarily disable this behavior when running this command.
 
 ```bash
 $ mvn clean install -Dcheckstyle.fail=false
 ```
 
-You can consult your seminar teacher to help you set the ```checkstyle.fail``` property in your IDE (or just google it).
 
 ### Running the application
 The build descriptor is configured to produce a single runnable jar file located at `target/application.jar`. The application can be run using the following command
@@ -255,10 +198,3 @@ Game over after 4 turns
 | | | |
 -------
 ```
-
-### Submitting the assignment
-The procedure to submit your solution may differ based on your seminar group. However, it should be generally OK to submit ```target/homework01-2022-1.0-SNAPSHOT-sources.jar``` to the homework vault.
-
-## Implementation
-Generally speaking, there are no mandatory requirements on the structure of your code as long as the command line interface of the ```Appplication``` class works correctly.
-The use of classes, enums, and interfaces provided as a part of the project skeleton is up to your decision.
